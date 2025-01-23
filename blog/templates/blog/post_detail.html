@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block content %}
+<div class="bg-slate-950 text-white flex justify-center mx-auto rounded-md w-1/2 mb-4 mt-8"><h1 class="text-xl font-bold py-4">{{ post.title }}</h1></div>
+<div class="flex justify-between px-32 mt-8 mb-8">
+    <div><h1 class="text-xl font-bold bg-stone-950 text-white p-4 rounded-xl">Author: {{ post.author }}</h1></div>
+    <div class="text-xl font-bold bg-stone-950 text-white p-4 rounded-xl">Publish Date: <time>{{ post.date|date:"D M Y"}}</time></div>
+</div>
+<div class="w-2/5 mx-auto mb-16">
+    <div class="mb-8"><img src="{% static "image/"|add:post.image %}" alt="{{ post.title }}" class="w-[100%]"></div>
+    <div class=""><p>{{ post.content|linebreaks }}</p></div>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}All post{% endblock title %}
+{% block content %}
+<div class="bg-slate-950 text-white flex justify-center mx-auto rounded-md w-1/2 mt-4 mb-4">
+    <div><h1 class="text-xl font-bold">All Post</h1></div>
+</div>
+<div class="grid grid-cols-3 gap-4 w-1/2 mx-auto mb-16 gap-y-16">
+    {% for post in all_post %}
+        {% include "snippet_html/latest_post.html" %}
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My blog
+{% endblock title %}
+
+{% block content %}
+    <div class="flex justify-center px-10 mt-4 mb-4">
+        <div class="w-96">
+            <img src="{% static "blog/Farhad.jpg" %}" alt="Farhad" class="pr-10 w-96">
+        </div>
+        <div class="w-80">
+            <h1 class="text-xl font-bold">Hi, My Name is Farhad</h1><br>
+            <p class="text-justify">Hi, I'm Farhad! I am currently pursuing my Bachelor of Science in Computer Science and Engineering (CSE) at the International Islamic University Chittagong (IIUC). My passion for technology has led me to specialize in Django, and I enjoy working on web development projects using this powerful framework. I am always eager to learn, explore new tools, and contribute to building efficient and scalable applications.
+                In my spare time, I enjoy experimenting with different coding challenges and improving my skills to stay ahead in the tech world. I'm excited about the future of technology and the opportunities that lie ahead!</p>
+        </div>
+    </div>
+    <div class="bg-slate-950 text-white flex justify-center mx-auto rounded-md w-1/2 mb-4">
+        <div><h1 class="text-xl font-bold">My latest post</h1></div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 w-1/2 mx-auto mb-4">
+        {% for post in latest_post %}
+            {% include "snippet_html/latest_post.html" %}
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<title>{% block title %} {% endblock title %}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+		<nav class="flex justify-between p-16 bg-slate-900 text-cyan-50 text-4xl">
+			<div>
+				<a href="{% url "landing_page" %}"><h1>Farhad Blog</h1></a>
+			</div>
+			<div>
+				<a href="{% url "all_post_page" %}"><h1>All Post</h1></a>
+			</div>
+		</nav>
+        {% block content %}{% endblock content %}
+	</body>
+</html>
