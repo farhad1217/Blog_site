@@ -1,2 +1,2 @@
-Caution: This website not responsive.
+Caution: This website is not responsive.
 please open it in desktop view.
